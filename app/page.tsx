@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="container md:w-10/12 min-h-screen flex-col">
       <div className="container mt-10">
-        <h1 className="text-3xl text-white mb-4">
+        <h1 className="text-3xl text-white mb-4 font-bold">
           Hello world, <span className="text-primary">triBagus</span> here!
         </h1>
         <p>
@@ -36,7 +36,7 @@ export default function Home() {
           <OtherProjects />
         </div>
       </div>
-      <div className="container mt-10">
+      <div className="container mt-10 mb-10">
         <h2 className="heading">Let&apos;s Talk</h2>
         <div className="flex flex-col">
           <p className="mb-8 w-[60%]">

@@ -18,7 +18,11 @@ export default function Contact() {
       >
         <AiFillLinkedin />
       </Link>
-      <Link href="#" target="_blank" className="link">
+      <Link
+        href="mailto:tri.bagus21@gmail.com?subject=Mail from tribagus website"
+        target="_blank"
+        className="link"
+      >
         <AiOutlineMail />
       </Link>
     </div>

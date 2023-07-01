@@ -15,7 +15,7 @@ interface ICard {
 const Card: FC<ICard> = (props): any => {
   const { image, title, content, techs, button } = props;
   return (
-    <div className="bg-dark rounded overflow-hidden shadow-sm hover:shadow-[0_10px_15px_-3px_rgb(255,255,255,0.15)] transition ease-out duration-300">
+    <div className="bg-dark rounded-md overflow-hidden shadow-sm hover:shadow-[0_8px_17px_-5px_rgb(255,255,255,0.20)] transition ease-out duration-300">
       {image && (
         <Image src={image} alt="tech" className="w-full h-33 object-cover" />
       )}
