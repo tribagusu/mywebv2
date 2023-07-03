@@ -1,8 +1,8 @@
 import React from "react";
 import Card from "./Card";
-import img1 from "../../public/tech1.jpeg";
-import img2 from "../../public/tech2.jpeg";
-import img3 from "../../public/tech3.jpeg";
+import img1 from "../../../public/tech1.jpeg";
+import img2 from "../../../public/tech2.jpeg";
+import img3 from "../../../public/tech3.jpeg";
 
 export default function Projects() {
   const projects = [

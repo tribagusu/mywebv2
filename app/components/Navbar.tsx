@@ -9,7 +9,7 @@ export default function Navbar() {
           href="/"
           className="py-3 px-10 rounded-md hover:bg-grey hover:bg-opacity-20 hover:text-white transition ease-in-out duration-100"
         >
-          Project
+          Dev
         </Link>
         <Link
           href="/blog"

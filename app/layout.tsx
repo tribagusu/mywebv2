@@ -1,7 +1,7 @@
-import Navbar from "@/components/navbar/Navbar";
+import Navbar from "@/app/components/Navbar";
 import "./globals.css";
 import { Roboto } from "next/font/google";
-import Footer from "@/components/footer/Footer";
+import Footer from "@/app/components/Footer";
 
 const openSans = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
