@@ -1,7 +1,7 @@
 import OtherProjects from "@/app/components/card/OtherProjects";
 import Projects from "@/app/components/card/Projects";
-import Contact from "@/app/components/contact/Contact";
-import Form from "@/app/components/contact/Form";
+import Contact from "@/app/components/Contact";
+import Form from "@/app/components/Form";
 import Tech from "@/app/components/Tech";
 
 export default function Home() {

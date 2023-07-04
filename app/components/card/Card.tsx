@@ -66,7 +66,7 @@ const Card: FC<ICard> = (props): any => {
               target="_blank"
               className="btn text-primary border-2 border-primary hover:bg-primary hover:text-dark"
             >
-              <span className="text-sm">GITHUB</span>
+              <span className="text-sm">CODE</span>
               <AiFillGithub />
             </Link>
           </div>

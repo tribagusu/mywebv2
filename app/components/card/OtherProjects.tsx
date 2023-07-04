@@ -53,7 +53,6 @@ export default function OtherProjects() {
         return (
           <Card
             key={project.id}
-            // image={project.image}
             title={project.title}
             content={project.content}
             techs={project.techs}

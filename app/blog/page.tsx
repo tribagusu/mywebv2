@@ -5,6 +5,12 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { DateTime } from "luxon";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "tribagus | blog",
+  description: "welcome to my tribagus blog",
+};
 
 export default function Blog() {
   const postDir = "content";
@@ -52,6 +58,10 @@ export default function Blog() {
                   <BsDot />
                 </span>
                 <span className="text-darkLight text-sm">{`${post.meta.words} words`}</span>
+                <span className="flex items-end mx-1">
+                  <BsDot />
+                </span>
+                <span className="text-darkLight text-sm">{`${post.meta.tags}`}</span>
               </div>
             </Link>
           );
