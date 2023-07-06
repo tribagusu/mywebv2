@@ -3,17 +3,17 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-end items-center md:w-11/12">
+    <nav className="flex justify-center items-center md:w-11/12 mx-auto">
       <div className="text-light text-sm flex mt-3 border-b border-dark">
         <Link
           href="/"
-          className="py-3 px-10 rounded-md hover:bg-grey hover:bg-opacity-20 hover:text-white transition ease-in-out duration-100"
+          className="py-3 px-10 rounded-md hover:bg-grey hover:bg-opacity-20 hover:text-white transition ease-out duration-100"
         >
           Dev
         </Link>
         <Link
           href="/blog"
-          className="py-3 px-10 rounded-md hover:bg-grey hover:bg-opacity-20 hover:text-white transition ease-in-out duration-100"
+          className="py-3 px-10 rounded-md hover:bg-grey hover:bg-opacity-20 hover:text-white transition ease-out duration-100"
         >
           Blog
         </Link>

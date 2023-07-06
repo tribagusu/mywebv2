@@ -4,6 +4,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./posts/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -16,6 +17,15 @@ module.exports = {
         text: "#bcbcbd",
       },
     },
+    // typography: {
+    //   DEFAULT: {
+    //     css: {
+    //       p: {
+    //         fontSize: "18px",
+    //       },
+    //     },
+    //   },
+    // },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

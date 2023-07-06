@@ -1,11 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import { BsDot } from "react-icons/bs";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import { DateTime } from "luxon";
 import { Metadata } from "next";
+import { allPosts } from "contentlayer/generated";
 
 export const metadata: Metadata = {
   title: "tribagus | blog",
@@ -13,24 +11,14 @@ export const metadata: Metadata = {
 };
 
 export default function Blog() {
-  const postDir = "content";
-  const files = fs.readdirSync(path.join(postDir));
-  const posts = files.map((filename) => {
-    const fileContent = fs.readFileSync(path.join(postDir, filename), "utf-8");
-    const { data: frontMatter } = matter(fileContent);
-    return {
-      meta: frontMatter,
-      slug: filename.replace(".mdx", ""),
-    };
-  });
-
-  // short the post based on date created
-  const sortedPosts = posts.sort(
-    (a, b) => Number(a.meta.date) - Number(b.meta.date)
+  const posts = allPosts.sort(
+    (a, b) =>
+      DateTime.fromISO(b.date).toMillis() - DateTime.fromISO(a.date).toMillis()
   );
+
   // filter based on index
-  const recentArticles = sortedPosts.filter((item, i) => i < 3);
-  const allArticles = sortedPosts.filter((item, i) => i > 2);
+  const recentArticles = posts.filter((item, i) => i < 3);
+  const allArticles = posts.filter((item, i) => i > 2);
 
   return (
     <main className="container md:w-8/12 min-h-screen flex-col">
@@ -41,27 +29,27 @@ export default function Blog() {
         {recentArticles.map((post, i) => {
           return (
             <Link
-              href={`/blog/${post.slug}`}
+              href={post.url}
               passHref
-              key={post.slug}
+              key={i}
               className="flex flex-col bg-dark mb-5 py-5 px-6 rounded-md shadow-sm hover:shadow-[0_6px_10px_-5px_rgb(255,255,255,0.30)] transition ease-out duration-200"
             >
-              <h2 className="text-2xl mb-2">{post.meta.title}</h2>
-              <p className="text-darkLight mb-2 text-sm">
-                {post.meta.description}
-              </p>
+              <h2 className="text-2xl mb-2">{post.title}</h2>
+              <p className="text-darkLight mb-2 text-sm">{post.description}</p>
               <div className="flex">
                 <span className="text-darkLight text-sm">
-                  {DateTime.fromJSDate(post.meta.date).toFormat("DD")}
+                  {DateTime.fromISO(post.date).toFormat("DD")}
                 </span>
                 <span className="flex items-end mx-1">
                   <BsDot />
                 </span>
-                <span className="text-darkLight text-sm">{`${post.meta.words} words`}</span>
+                <span className="text-darkLight text-sm">{`${
+                  post.body.code.split(" ").length
+                } words`}</span>
                 <span className="flex items-end mx-1">
                   <BsDot />
                 </span>
-                <span className="text-darkLight text-sm">{`${post.meta.tags}`}</span>
+                <span className="text-darkLight text-sm">{`${post.tags}`}</span>
               </div>
             </Link>
           );
@@ -74,13 +62,13 @@ export default function Blog() {
         {allArticles.map((post, i) => {
           return (
             <Link
-              href={`/blog/${post.slug}`}
+              href={post.url}
               passHref
-              key={post.slug}
+              key={i}
               className="flex justify-between px-6 py-1.5 hover:text-primary"
             >
-              <span>{post.meta.title}</span>
-              <span>{DateTime.fromJSDate(post.meta.date).toFormat("DD")}</span>
+              <span>{post.title}</span>
+              <span>{DateTime.fromISO(post.date).toFormat("DD")}</span>
             </Link>
           );
         })}

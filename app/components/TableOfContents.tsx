@@ -1,15 +1,11 @@
 "use client";
 
-import { useState, FC } from "react";
+import { useState } from "react";
 import { BsDot } from "react-icons/bs";
 import { BiSolidRightArrow } from "react-icons/bi";
 import { BiSolidDownArrow } from "react-icons/bi";
 
-type Props = {
-  props: any;
-};
-
-const TableOfContents: FC<Props> = (props): any => {
+const TableOfContents = (props: any) => {
   const [showTable, setShowTable] = useState(false);
 
   const handleShowTable = () => {
@@ -17,7 +13,7 @@ const TableOfContents: FC<Props> = (props): any => {
   };
 
   return (
-    <div className="bg-dark mb-10 py-1 px-6 rounded-md">
+    <div className="bg-dark mb-5 py-1 px-6 rounded-md">
       <div
         onClick={handleShowTable}
         className={`flex items-center gap-2 py-2 ${
@@ -29,7 +25,7 @@ const TableOfContents: FC<Props> = (props): any => {
       </div>
       {showTable && (
         <ol className="px-4">
-          {props.props.frontMatter.tableOfContent?.map((content: any) => (
+          {props.post.tableOfContent?.map((content: any) => (
             <li key={content} className="flex items-center text-lg">
               <span className="text-2xl">
                 <BsDot />

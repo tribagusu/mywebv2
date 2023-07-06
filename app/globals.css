@@ -32,3 +32,7 @@ body {
 .link {
   @apply flex text-2xl p-3 rounded-full text-dark justify-center items-center bg-primary hover:bg-grey transition ease-out duration-200;
 }
+
+.prose-custom {
+  @apply prose max-w-none prose-p:text-[18px] dark:prose-invert prose-headings:text-light prose-a:text-light prose-code:text-light prose-p:text-text;
+}
