@@ -20,6 +20,12 @@ The `useSWR` hook requires two things to make it work:
 useSWR("/crimes/passion", fetcher);
 ```
 
+```js
+<article className="prose">
+  <p>Hello world</p>
+</article>
+```
+
 - A key: This is a little vague, but think it if as something that uniquely identifies the data you want to fetch... which for a RESTful API endpoint can be the URL.
 - A fetcher: This is a function who will do the work of making the actual API request. In our case we'll be using [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), but you could use [axios](https://github.com/axios/axios) if you prefer. Its only requirement is that it returns a promise which resolves the data you are fetching.
 
@@ -33,7 +39,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 Rather than having to pass the `fetcher` function, and any other config options you may want to set on every call to the `useSWR` hook, you can wrap your components with a provider called `SWRConfig`. This allows you to globally set config options to be used with every `useSWR` hook call. In our example we'll pass the fetcher function to it so it can be used globally.
 
-```jsx
+```tsx
 export default function App() {
   return (
     <SWRConfig value={{ fetcher }}>
@@ -90,7 +96,7 @@ function Crimes() {
 
 In order to display (and filter) the crime data, I want a unique list of the crime categories. JavaScript doesn't have a way to do this out of the box like you might do `values.uniq` in Ruby. We can make our own very quickly though using a [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set).
 
-```js
+```tsx
 // find all categories
 const allCategories = data.map((crime) => crime.category);
 // convert all categories into a set
