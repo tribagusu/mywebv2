@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -8,22 +7,24 @@ export default function Navbar() {
   const currentRoute = usePathname();
 
   return (
-    <nav className="flex justify-center items-center md:w-11/12 mx-auto">
+    <nav className="flex px-4 justify-start items-center w-11/12 md:w-10/12 mx-auto border-b border-dark pb-3">
       <div className="text-light text-sm flex mt-3">
         <Link
           href="/"
-          className={`py-3 px-10 rounded-md hover:text-white ${
-            currentRoute === "/" ? "bg-grey bg-opacity-20" : "bg-[#1d1e20]"
+          className={`py-2 px-6 rounded font-medium ${
+            currentRoute === "/"
+              ? "bg-light text-dark"
+              : "bg-[#1d1e20] hover:text-white "
           }`}
         >
-          Dev
+          About
         </Link>
         <Link
           href="/blog"
-          className={`py-3 px-10 rounded-md hover:text-white ${
+          className={`py-2 px-6 rounded font-medium ${
             currentRoute.includes("/blog")
-              ? "bg-grey bg-opacity-20"
-              : "bg-[#1d1e20]"
+              ? "bg-light text-dark"
+              : "bg-[#1d1e20] hover:text-white "
           }`}
         >
           Blog

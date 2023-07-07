@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { BsDot } from "react-icons/bs";
+import { BsDot, BsTagFill } from "react-icons/bs";
 import { DateTime } from "luxon";
 import { Metadata } from "next";
 import { allPosts } from "contentlayer/generated";
@@ -49,7 +49,14 @@ export default function Blog() {
                 <span className="md:flex items-end mx-1 hidden">
                   <BsDot />
                 </span>
-                <span className="text-darkLight text-sm hidden md:inline">{`${post.tags}`}</span>
+                <ul className="flex gap-2">
+                  {post.tags?.map((tag, i) => (
+                    <li
+                      key={i}
+                      className=" text-darkLight text-sm underline"
+                    >{`${tag}`}</li>
+                  ))}
+                </ul>
               </div>
             </Link>
           );

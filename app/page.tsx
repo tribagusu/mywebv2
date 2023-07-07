@@ -3,7 +3,6 @@ import Projects from "@/app/components/card/Projects";
 import Contact from "@/app/components/Contact";
 import Form from "@/app/components/Form";
 import Tech from "@/app/components/Tech";
-import ButtonSeeMore from "./components/card/ButtonSeeMore";
 
 export default function Home() {
   return (

@@ -1,7 +1,9 @@
 import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
 import "./globals.css";
 import { Roboto } from "next/font/google";
-import Footer from "@/app/components/Footer";
+import Providers from "@/lib/providers";
+import ThemeSwitcher from "@/lib/theme-switcher";
 
 const openSans = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -22,7 +24,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={openSans.className}>
         <Navbar />
+        {/* <Providers> */}
+        {/* <ThemeSwitcher /> */}
         {children}
+        {/* </Providers> */}
         <Footer />
       </body>
     </html>
