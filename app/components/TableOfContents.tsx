@@ -21,12 +21,12 @@ const TableOfContents = (props: any) => {
         }`}
       >
         {showTable ? <BiSolidDownArrow /> : <BiSolidRightArrow />}
-        <h3 className="text-lg">Table of Contents</h3>
+        <h3 className="text-base">Table of Contents</h3>
       </div>
       {showTable && (
         <ol className="px-4 pb-2">
           {props.post.tableOfContent?.map((content: any) => (
-            <li key={content} className="flex items-center text-lg">
+            <li key={content} className="flex items-center text-base">
               <span className="text-2xl">
                 <BsDot />
               </span>

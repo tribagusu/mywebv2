@@ -43,13 +43,13 @@ export default function Blog() {
                 <span className="md:flex items-end mx-1 hidden">
                   <BsDot />
                 </span>
-                <span className="text-darkLight text-sm">{`${
+                <span className="text-darkLight text-sm hidden md:inline">{`${
                   post.body.code.split(" ").length
                 } words`}</span>
                 <span className="md:flex items-end mx-1 hidden">
                   <BsDot />
                 </span>
-                <span className="text-darkLight text-sm">{`${post.tags}`}</span>
+                <span className="text-darkLight text-sm hidden md:inline">{`${post.tags}`}</span>
               </div>
             </Link>
           );

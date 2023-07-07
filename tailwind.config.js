@@ -14,8 +14,8 @@ module.exports = {
         darkLight: "#9B9C9D",
         grey: "#C4C4C5",
         light: "#E4E4E4",
-        text: "#C7C7C7",
-        text2: "#",
+        text: "#E2E2E2",
+        textLight: "#FCFCFC",
       },
     },
     // typography: {

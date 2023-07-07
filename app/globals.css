@@ -15,7 +15,7 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #3e3e42;
-  border-radius: 3px;
+  border-radius: 8px;
 }
 
 /* Handle on hover */
@@ -55,5 +55,40 @@ body {
 }
 
 .prose-custom {
-  @apply prose max-w-none prose-p:text-[18px] dark:prose-invert prose-headings:text-light prose-a:text-light prose-code:text-light prose-p:text-text prose-code:text-[16px] prose-ol:text-[18px] prose-ol:text-text prose-ul:text-[18px] prose-ul:text-text;
+  @apply prose max-w-none dark:prose-invert
+
+  prose-p:text-[17px] 
+  md:prose-p:text-[18px]
+  prose-p:text-text
+  prose-p:font-[300]
+
+  prose-headings:text-textLight
+  prose-headings:leading-[24px]
+  prose-headings:mb-1
+  prose-h1:text-[22px]
+  prose-h2:text-[20px]
+
+  prose-a:text-textLight
+  prose-a:text-[17px]
+  md:prose-a:text-[18px]
+  prose-a:font-[400]
+  
+  prose-code:text-[15px]
+  prose-code:font-[500]
+
+   prose-ol:text-[18px] 
+   md:prose-ol:text-[18px] 
+   prose-ol:leading-tight 
+   prose-ol:text-text 
+
+   prose-ul:text-[17px] 
+   md:prose-ul:text-[18px] 
+   prose-ul:text-text 
+   prose-ul:leading-tight
+   
+   prose-li:text-[17px] 
+   prose-li:leading-normal 
+   md:prose-li:text-[18px]
+   prose-li:font-[300]
+   prose-li:text-text;
 }
