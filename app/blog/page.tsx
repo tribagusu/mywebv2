@@ -32,7 +32,7 @@ export default function Blog() {
               href={post.url}
               passHref
               key={i}
-              className="flex flex-col bg-dark mb-5 py-5 px-6 rounded-md shadow-sm hover:shadow-[0_6px_10px_-5px_rgb(255,255,255,0.30)] transition ease-out duration-200"
+              className="flex flex-col bg-dark mb-5 py-5 px-6 rounded-md shadow-sm transition ease-in-out duration-300 active:scale-95"
             >
               <h2 className="text-2xl mb-2">{post.title}</h2>
               <p className="text-darkLight mb-2 text-sm">{post.description}</p>
