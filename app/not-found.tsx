@@ -6,8 +6,8 @@ export default function NotFound() {
 
   return (
     <div className="flex h-[calc(100vh-170px)] overflow-auto ">
-      <div className="flex flex-col mx-auto items-center justify-center">
-        <h1 className="text-[150px] leading-none">404</h1>
+      <div className="flex flex-col mx-auto items-center justify-center px-2">
+        <h1 className="text-[130px] leading-none">404</h1>
         <p className="text-center text-xl max-w-lg font-thin">
           Oh, mate.. We searched high and low but couldn't find what you're
           looking for. Let's find a better place for you to go.

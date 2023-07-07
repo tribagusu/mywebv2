@@ -3,6 +3,7 @@ import Projects from "@/app/components/card/Projects";
 import Contact from "@/app/components/Contact";
 import Form from "@/app/components/Form";
 import Tech from "@/app/components/Tech";
+import ButtonSeeMore from "./components/card/ButtonSeeMore";
 
 export default function Home() {
   return (
@@ -30,12 +31,7 @@ export default function Home() {
           <Projects />
         </div>
       </div>
-      <div className="container mt-10">
-        <h2 className="heading">Other Projects</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <OtherProjects />
-        </div>
-      </div>
+      <OtherProjects />
       <div className="container mt-10 mb-10">
         <h2 className="heading">Let&apos;s Talk</h2>
         <div className="flex flex-col">

@@ -13,7 +13,7 @@ const TableOfContents = (props: any) => {
   };
 
   return (
-    <div className="bg-dark mb-5 py-1 px-6 rounded-md">
+    <div className="bg-dark mb-3 px-6 rounded-md">
       <div
         onClick={handleShowTable}
         className={`flex items-center gap-2 py-2 ${
@@ -24,7 +24,7 @@ const TableOfContents = (props: any) => {
         <h3 className="text-lg">Table of Contents</h3>
       </div>
       {showTable && (
-        <ol className="px-4">
+        <ol className="px-4 pb-2">
           {props.post.tableOfContent?.map((content: any) => (
             <li key={content} className="flex items-center text-lg">
               <span className="text-2xl">

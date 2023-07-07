@@ -36,17 +36,17 @@ export default function Blog() {
             >
               <h2 className="text-2xl mb-2">{post.title}</h2>
               <p className="text-darkLight mb-2 text-sm">{post.description}</p>
-              <div className="flex">
+              <div className="flex flex-col md:flex-row">
                 <span className="text-darkLight text-sm">
                   {DateTime.fromISO(post.date).toFormat("DD")}
                 </span>
-                <span className="flex items-end mx-1">
+                <span className="md:flex items-end mx-1 hidden">
                   <BsDot />
                 </span>
                 <span className="text-darkLight text-sm">{`${
                   post.body.code.split(" ").length
                 } words`}</span>
-                <span className="flex items-end mx-1">
+                <span className="md:flex items-end mx-1 hidden">
                   <BsDot />
                 </span>
                 <span className="text-darkLight text-sm">{`${post.tags}`}</span>
@@ -65,7 +65,7 @@ export default function Blog() {
               href={post.url}
               passHref
               key={i}
-              className="flex justify-between px-6 py-1.5 hover:text-primary"
+              className="flex flex-col md:flex-row justify-between px-6 py-1.5 hover:text-primary"
             >
               <span>{post.title}</span>
               <span>{DateTime.fromISO(post.date).toFormat("DD")}</span>
