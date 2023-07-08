@@ -8,16 +8,22 @@ export default function Home() {
   return (
     <main className="container md:w-10/12 min-h-screen flex-col">
       <div className="container mt-10">
-        <h1 className="text-3xl text-white mb-4 font-bold">
+        <h1 className="text-xl text-white">
           Hello world, <span className="text-primary">triBagus</span> here!
         </h1>
         <p>
-          a Frontend Developer who passionate with fullstack, web, and coffee.
+          a Frontend Developer who passionate with fullstack, web, and{" "}
+          <span className="text-primary">coffee</span>.
         </p>
         <br />
         <p className="mb-2">I&apos;m playing around with these technologies:</p>
         <div className="grid grid-cols-2 sm:grid-cols-4">
           <Tech />
+        </div>
+        <br />
+        <p className="mb-4">Hit me directly:</p>
+        <div className="flex">
+          <Contact />
         </div>
       </div>
       <div className="container mt-8">
@@ -27,7 +33,7 @@ export default function Home() {
         </div>
       </div>
       <OtherProjects />
-      <div className="container mt-8 mb-10">
+      {/* <div className="container mt-8 mb-10">
         <h2 className="heading">Let&apos;s Talk</h2>
         <div className="flex flex-col">
           <p className="mb-8 w-[60%]">
@@ -35,10 +41,9 @@ export default function Home() {
           </p>
           <div className="flex gap-5">
             <Form />
-            <Contact />
           </div>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }

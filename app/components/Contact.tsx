@@ -3,13 +3,14 @@ import Link from "next/link";
 
 export default function Contact() {
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex gap-5">
       <Link
         href="https://github.com/tribagusu"
         target="_blank"
         className="link"
       >
         <AiFillGithub />
+        <p className="text-sm">Github</p>
       </Link>
       <Link
         href="https://www.linkedin.com/in/tribagus/"
@@ -17,6 +18,7 @@ export default function Contact() {
         className="link"
       >
         <AiFillLinkedin />
+        <p className="text-sm">Linkedin</p>
       </Link>
       <Link
         href="mailto:tri.bagus21@gmail.com?subject=Mail from tribagus website"
@@ -24,6 +26,7 @@ export default function Contact() {
         className="link"
       >
         <AiOutlineMail />
+        <p className="text-sm">Email</p>
       </Link>
     </div>
   );

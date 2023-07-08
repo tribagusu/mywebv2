@@ -53,9 +53,8 @@ export default function OtherProjects() {
   ];
 
   return (
-    <div className="container mt-2">
-      {/* <span className="container mb-10"> */}
-      <div className="flex justify-center mb-5">
+    <div className="container mb-10">
+      <div className="flex justify-center mb-2">
         <button
           className="p-4 bg-none hover:text-light text-darkLight transition ease-out duration-200"
           onClick={() => setShowMore(!showMore)}

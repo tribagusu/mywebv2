@@ -68,7 +68,7 @@ export default function Tech() {
         return (
           <div
             key={tech.name}
-            className="text-md flex justify-start items-center gap-2 p-1 text-primary hover:text-white transition ease-out duration-500"
+            className="text-[15px] font-light flex justify-start items-center gap-2 p-1 text-primary hover:text-white transition ease-out duration-500"
           >
             <span>{tech.logo}</span>
             <span className="hover:cursor-default">{tech.name}</span>
