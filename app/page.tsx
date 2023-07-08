@@ -12,26 +12,22 @@ export default function Home() {
           Hello world, <span className="text-primary">triBagus</span> here!
         </h1>
         <p>
-          a{" "}
-          <span className="text-primary text-lg">Fullstack Web Developer</span>{" "}
-          who uses TypeScript, NextJS, and MERN stacks. <br /> Sometimes
-          I&apos;m playing around with Python, Solidity, and Coffee Machine :)
+          a Frontend Developer who passionate with fullstack, web, and coffee.
         </p>
-      </div>
-      <div className="container mt-10">
-        <h2 className="heading">Technologies that I use:</h2>
+        <br />
+        <p className="mb-2">I&apos;m playing around with these technologies:</p>
         <div className="grid grid-cols-2 sm:grid-cols-4">
           <Tech />
         </div>
       </div>
-      <div className="container mt-10">
-        <h2 className="heading">Projects I&apos;ve Built</h2>
+      <div className="container mt-8">
+        <h2 className="heading">Project Highlights</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           <Projects />
         </div>
       </div>
       <OtherProjects />
-      <div className="container mt-10 mb-10">
+      <div className="container mt-8 mb-10">
         <h2 className="heading">Let&apos;s Talk</h2>
         <div className="flex flex-col">
           <p className="mb-8 w-[60%]">
