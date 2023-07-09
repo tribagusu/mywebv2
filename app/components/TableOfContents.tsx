@@ -13,7 +13,7 @@ const TableOfContents = (props: any) => {
   };
 
   return (
-    <div className="bg-dark mb-3 px-6 rounded-md">
+    <div className="bg-bgGray border border-borderGray dark:bg-dark dark:border-dark mb-3 px-6 rounded-md">
       <div
         onClick={handleShowTable}
         className={`flex items-center gap-2 py-2 ${

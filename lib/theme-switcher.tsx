@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import { MdLightMode } from "react-icons/md";
+import { MdNightlight } from "react-icons/md";
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -15,10 +17,22 @@ export default function ThemeSwitcher() {
   }
 
   return (
-    <div>
-      current theme {theme}
-      <button onClick={() => setTheme("light")}>Light Mode</button>
-      <button onClick={() => setTheme("dark")}>Dark Mode</button>
-    </div>
+    <>
+      {theme === "dark" ? (
+        <button
+          className="flex text-[22px] py-3 px-4 cursor-pointer hover:text-accent "
+          onClick={() => setTheme("light")}
+        >
+          <MdLightMode />
+        </button>
+      ) : (
+        <button
+          className="flex text-[22px] py-3 px-4 cursor-pointer hover:text-accent "
+          onClick={() => setTheme("dark")}
+        >
+          <MdNightlight />
+        </button>
+      )}
+    </>
   );
 }

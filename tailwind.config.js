@@ -9,14 +9,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#C68F59",
+        accent: "#C68F59",
+        textDark: "#2a2a2a",
+        textLight: "#E2E2E2",
+        bgDark: "#1d1e20",
+        bgGray: "#F0F0F0",
+        borderGray: "#D6D6D8",
         primary2: "#D3AE7E",
         dark: "#2E2E33",
         darkLight: "#9B9C9D",
         grey: "#C4C4C5",
         light: "#E4E4E4",
-        text: "#E2E2E2",
-        textLight: "#FCFCFC",
+        // textLight: "#FCFCFC",
       },
     },
     // typography: {
@@ -30,5 +34,5 @@ module.exports = {
     // },
   },
   plugins: [require("@tailwindcss/typography")],
-  // darkMode: "class",
+  darkMode: "class",
 };

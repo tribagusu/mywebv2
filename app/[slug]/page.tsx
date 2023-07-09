@@ -25,10 +25,12 @@ const Post = ({ params }: { params: { slug: string } }) => {
 
   return (
     <main className="container md:w-8/12 min-h-screen flex-col">
-      <h1 className="text-4xl text-textLight font-bold mt-10 mb-1 py-2">
+      <h1 className="text-4xl dark:text-textLight font-bold mt-10 mb-1 py-2">
         {post.title}
       </h1>
-      <p className="text-light mb-1 text-lg font-light">{post.description}</p>
+      <p className="dark:text-light mb-1 text-lg font-normal">
+        {post.description}
+      </p>
       <div className="flex flex-col md:flex-row mb-5">
         <span className="text-darkLight text-sm">tribagus</span>
         <span className="md:flex items-end mx-1 hidden">

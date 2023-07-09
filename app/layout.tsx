@@ -11,8 +11,8 @@ const openSans = Roboto({
 });
 
 export const metadata = {
-  title: "tribagus",
-  description: "fullstack web developer",
+  title: "tribagus - Frontend Developer",
+  description: "Frontend Developer, Backend Developer, Fullstack Web Developer",
 };
 
 export default function RootLayout({
@@ -21,14 +21,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <body className={openSans.className}>
-        <Navbar />
-        {/* <Providers> */}
-        {/* <ThemeSwitcher /> */}
-        {children}
-        {/* </Providers> */}
-        <Footer />
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
