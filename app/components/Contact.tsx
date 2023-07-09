@@ -10,7 +10,7 @@ export default function Contact() {
         className="link"
       >
         <AiFillGithub />
-        <p className="text-[18px]">Github</p>
+        <p className="text-[17px]">Github</p>
       </Link>
       <Link
         href="https://www.linkedin.com/in/tribagus/"
@@ -18,7 +18,7 @@ export default function Contact() {
         className="link"
       >
         <AiFillLinkedin />
-        <p className="text-[18px]">Linkedin</p>
+        <p className="text-[17px]">Linkedin</p>
       </Link>
       <Link
         href="mailto:tri.bagus21@gmail.com?subject=Mail from tribagus website"
@@ -26,7 +26,7 @@ export default function Contact() {
         className="link"
       >
         <AiOutlineMail />
-        <p className="text-[18px]">Email</p>
+        <p className="text-[17px]">Email</p>
       </Link>
     </div>
   );

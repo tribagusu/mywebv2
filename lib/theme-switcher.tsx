@@ -18,19 +18,19 @@ export default function ThemeSwitcher() {
 
   return (
     <>
-      {theme === "dark" ? (
-        <button
-          className="flex text-[22px] py-3 px-4 cursor-pointer hover:text-accent "
-          onClick={() => setTheme("light")}
-        >
-          <MdLightMode />
-        </button>
-      ) : (
+      {theme === "light" ? (
         <button
           className="flex text-[22px] py-3 px-4 cursor-pointer hover:text-accent "
           onClick={() => setTheme("dark")}
         >
           <MdNightlight />
+        </button>
+      ) : (
+        <button
+          className="flex text-[22px] py-3 px-4 cursor-pointer hover:text-accent "
+          onClick={() => setTheme("light")}
+        >
+          <MdLightMode />
         </button>
       )}
     </>

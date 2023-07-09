@@ -6,8 +6,8 @@ import { Metadata } from "next";
 import { allPosts } from "contentlayer/generated";
 
 export const metadata: Metadata = {
-  title: "tribagus | blog",
-  description: "welcome to my tribagus blog",
+  title: "tribagus - Frontend Developer",
+  description: "welcome to my blog",
 };
 
 export default function Blog() {

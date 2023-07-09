@@ -21,7 +21,7 @@ export default function Home() {
           <Tech />
         </div>
         <br />
-        <p className="mb-4">Hit me directly:</p>
+        <p className="mb-2">Hit me directly:</p>
         <div className="flex">
           <Contact />
         </div>
