@@ -12,7 +12,7 @@ export default function Navbar() {
       <div className="text-light text-base flex items-center">
         <Link
           href="/"
-          className={`py-2 px-6 rounded font-medium ${
+          className={`py-2 px-6 rounded font-normal ${
             !currentRoute.includes("/about")
               ? "bg-bgDark text-light dark:bg-light dark:text-dark"
               : "bg-none text-dark dark:bg-bgDark dark:text-light hover:text-black dark:hover:text-white"
@@ -22,7 +22,7 @@ export default function Navbar() {
         </Link>
         <Link
           href="/about"
-          className={`py-2 px-6 rounded font-medium ${
+          className={`py-2 px-6 rounded font-normal ${
             currentRoute.includes("/about")
               ? "bg-bgDark text-light dark:bg-light dark:text-dark"
               : "bg-none text-dark dark:bg-bgDark dark:text-light hover:text-black dark:hover:text-white"
