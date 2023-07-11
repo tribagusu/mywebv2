@@ -9,13 +9,13 @@ export default function Navbar() {
 
   return (
     <nav className="flex  pb-2 pt-4 md:pt-12 justify-between items-center w-11/12 md:w-8/12 mx-auto border-b border-dark dark:border-darkLight">
-      <div className="text-light text-base flex items-center">
+      <div className="text-light text-sm flex items-center">
         <Link
           href="/"
           className={`py-2 px-6 rounded font-normal ${
             !currentRoute.includes("/about")
               ? "bg-bgDark text-light dark:bg-light dark:text-dark"
-              : "bg-none text-dark dark:bg-bgDark dark:text-light hover:text-black dark:hover:text-white"
+              : "bg-none text-dark dark:bg-bgDark dark:text-light hover:text-accent dark:hover:text-accent"
           }`}
         >
           Blog
@@ -25,7 +25,7 @@ export default function Navbar() {
           className={`py-2 px-6 rounded font-normal ${
             currentRoute.includes("/about")
               ? "bg-bgDark text-light dark:bg-light dark:text-dark"
-              : "bg-none text-dark dark:bg-bgDark dark:text-light hover:text-black dark:hover:text-white"
+              : "bg-none text-dark dark:bg-bgDark dark:text-light hover:text-accent dark:hover:text-accent"
           }`}
         >
           About
