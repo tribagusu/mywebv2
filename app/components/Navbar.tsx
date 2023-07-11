@@ -8,7 +8,7 @@ export default function Navbar() {
   const currentRoute = usePathname();
 
   return (
-    <nav className="flex  pb-2 pt-4 md:pt-12 justify-between items-center w-11/12 md:w-8/12 mx-auto border-b border-dark dark:border-darkLight">
+    <nav className="flex pb-1 pt-4 md:pt-12 justify-between items-center w-11/12 md:w-8/12 mx-auto border-b border-dark dark:border-darkLight">
       <div className="text-light text-sm flex items-center">
         <Link
           href="/"
