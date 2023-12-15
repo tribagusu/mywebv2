@@ -23,14 +23,14 @@ export default function ThemeSwitcher() {
           className="flex text-[22px] p-4 cursor-pointer hover:text-accent "
           onClick={() => setTheme("dark")}
         >
-          <MdNightlight />
+          <MdLightMode />
         </button>
       ) : (
         <button
           className="flex text-[22px] p-4 cursor-pointer hover:text-accent "
           onClick={() => setTheme("light")}
         >
-          <MdLightMode />
+          <MdNightlight />
         </button>
       )}
     </>
