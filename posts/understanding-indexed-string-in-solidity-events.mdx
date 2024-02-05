@@ -1,0 +1,38 @@
+---
+title: Understanding Indexed Strings in Solidity Events
+date: 2024-02-05
+description: Understanding Indexed Strings in Solidity Events
+tags: [solidity]
+tableOfContent: [Events, Indexing]
+---
+
+## What are Events in Solidity?
+
+Before discussing the intricacies of indexed strings, it’s essential to have a basic grasp of what events are. In Solidity, events are mechanisms that allow the emission of logging information from smart contracts to the EVM. External consumers, like decentralized applications or other contracts, can “listen” to these emitted logs and trigger corresponding reactions. For instance, a dApp might update its user interface when a specific event is detected.
+
+## Indexing in Events
+
+Events have an advantageous feature called “indexing.” When a parameter in an event is indexed, it makes it easier and quicker for applications to filter and fetch specific logs from the massive pile of data on the blockchain. Think of it as adding a ‘tag’ to the log entry, which can then be used as a search keyword.
+
+However, as with most things in programming, there’s a catch when it comes to indexing.
+
+## The Peculiarity of Indexed Strings
+
+When you attempt to index dynamic data types like string, bytes, array, or struct in Solidity, they don't get stored in their original form. Instead, the Ethereum log system stores the Keccak-256 hash of these data types.
+
+This behavior can be perplexing. Imagine emitting an event with an indexed string parameter, hoping to later search for logs using that exact string. Instead, you’ll find yourself dealing with a hash of the string, not the string itself!
+
+```js
+pragma solidity ^0.8.0;
+
+contract SampleEvent {
+    event LogData(string indexed indexedStr, string nonIndexedStr);
+    function triggerEvent(string memory str) public {
+        emit LogData(str, str);
+    }
+}
+```
+
+In the contract above, if you listen to the LogData event, you'd notice that the indexed value for indexedStr is the Keccak-256 hash of the input string. In contrast, nonIndexedStr retains the original string data.
+
+source: https://coinsbench.com/understanding-indexed-strings-in-solidity-events-19ba75986de6

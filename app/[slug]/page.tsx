@@ -32,10 +32,6 @@ const Post = ({ params }: { params: { slug: string } }) => {
         {post.description}
       </p>
       <div className="flex flex-col md:flex-row mb-5">
-        <span className="text-darkLight text-sm">tribagus</span>
-        <span className="md:flex items-end mx-1 hidden">
-          <BsDot />
-        </span>
         <span className="text-darkLight text-sm">
           {DateTime.fromISO(post.date).toFormat("DDD")}
         </span>
