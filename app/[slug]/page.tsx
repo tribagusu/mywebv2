@@ -24,27 +24,27 @@ const Post = ({ params }: { params: { slug: string } }) => {
   const MDXContent = useMDXComponent(post.body.code);
 
   return (
-    <main className="container md:w-8/12 min-h-screen flex-col">
-      <h1 className="text-4xl dark:text-textLight font-bold mt-10 mb-1 py-2">
+    <main className="container flex-col min-h-screen md:w-8/12">
+      <h1 className="py-2 mt-10 mb-1 text-4xl font-bold dark:text-textLight">
         {post.title}
       </h1>
-      <p className="dark:text-light mb-1 text-lg font-normal">
+      <p className="mb-1 text-lg font-normal dark:text-light">
         {post.description}
       </p>
-      <div className="flex flex-col md:flex-row mb-5">
-        <span className="text-darkLight text-sm">
-          {DateTime.fromISO(post.date).toFormat("DDD")}
+      <div className="flex flex-col mb-5 md:flex-row">
+        <span className="text-sm text-darkLight">
+          {DateTime.fromISO(post.date).toFormat("MMM yyyy")}
         </span>
-        <span className="md:flex items-end mx-1 hidden">
+        <span className="items-end hidden mx-1 md:flex">
           <BsDot />
         </span>
-        <span className="text-darkLight text-sm">{`${
+        <span className="text-sm text-darkLight">{`${
           post.body.code.split(" ").length
         } words`}</span>
       </div>
       <TableOfContents post={post} />
 
-      <article className="prose-custom mb-10">
+      <article className="mb-10 prose-custom">
         <MDXContent components={mdxComponents} />
       </article>
     </main>

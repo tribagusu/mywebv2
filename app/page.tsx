@@ -17,13 +17,16 @@ export default function Blog() {
   );
 
   return (
-    <main className="container md:w-8/12 min-h-screen flex-col">
+    <main className="container flex-col min-h-screen md:w-8/12">
       <div className="container mt-10">
-        <h1 className="text-3xl dark:text-white mb-4 font-semibold">
+        <h1 className="mb-4 text-3xl font-semibold dark:text-white">
           Recent Articles
         </h1>
       </div>
       <article className="container">
+        <h2 className="mb-4 text-2xl font-semibold dark:text-white">
+          Code Snippet
+        </h2>
         {posts
           .filter((item, i) => i < 3)
           .map((post, i) => {
@@ -34,28 +37,28 @@ export default function Blog() {
                 key={i}
                 className="flex flex-col bg-bgGray dark:bg-dark mb-5 py-5 px-6 rounded-md border border-borderGray dark:border-bgDark transition ease-in-out duration-200 active:scale-[0.98]"
               >
-                <h2 className="text-2xl mb-2 font-medium">{post.title}</h2>
-                <p className="dark:text-darkLight mb-2 text-sm">
+                <h2 className="mb-2 text-2xl font-medium">{post.title}</h2>
+                <p className="mb-2 text-sm dark:text-darkLight">
                   {post.description}
                 </p>
                 <div className="flex flex-col md:flex-row">
-                  <span className="text-darkLight text-sm">
-                    {DateTime.fromISO(post.date).toFormat("DD")}
+                  <span className="text-sm text-darkLight">
+                    {DateTime.fromISO(post.date).toFormat("MMM yyyy")}
                   </span>
-                  <span className="md:flex items-end mx-1 hidden">
+                  <span className="items-end hidden mx-1 md:flex">
                     <BsDot />
                   </span>
-                  <span className="text-darkLight text-sm hidden md:inline">{`${
+                  <span className="hidden text-sm text-darkLight md:inline">{`${
                     post.body.code.split(" ").length
                   } words`}</span>
-                  <span className="md:flex items-end mx-1 hidden">
+                  <span className="items-end hidden mx-1 md:flex">
                     <BsDot />
                   </span>
                   <ul className="flex gap-2">
                     {post.tags?.map((tag, i) => (
                       <li
                         key={i}
-                        className=" text-darkLight text-sm underline"
+                        className="text-sm underline text-darkLight"
                       >{`${tag}`}</li>
                     ))}
                   </ul>
@@ -65,7 +68,7 @@ export default function Blog() {
           })}
       </article>
       <div className="container mt-5">
-        <h1 className="text-3xl dark:text-white mb-4 font-semibold">
+        <h1 className="mb-4 text-3xl font-semibold dark:text-white">
           All Articles
         </h1>
       </div>
@@ -79,7 +82,7 @@ export default function Blog() {
               className="flex flex-col md:flex-row justify-between px-6 py-1.5 hover:text-accent"
             >
               <span>{post.title}</span>
-              <span>{DateTime.fromISO(post.date).toFormat("DD")}</span>
+              <span>{DateTime.fromISO(post.date).toFormat("MMM yyyy")}</span>
             </Link>
           );
         })}

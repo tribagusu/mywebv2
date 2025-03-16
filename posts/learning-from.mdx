@@ -1,36 +1,52 @@
 ---
-title: Learnings From My First Year as a Software Engineer
-date: 2022-04-10
-description: Nine of the most commonly used array methods
-tags: [react, nextjs, javascript]
-tableOfContent: [map, foreach, reduce]
+title: How to setup vercel deployment for Express.ts app
+date: 2025-01-15
+description: Deploy an Express.ts app to Vercel
+tags: [express, vercel, typescript]
+tableOfContent: [files structure, vercel.json]
 ---
 
-this is my **second** blog post using _markdown_
+This is how I deploy my **Express** app using TypeScript to **Vercel free version**
 
-```js
-here my code snippet below:
-1.
+First, you need to create a new Vercel account and follow the steps to set up your account.
+
+This is how my files structure looks like:
+
+```text
+src/
+  index.ts
+  routes/
+    api.ts
+  controllers/
+  models/
+  middlewares/
+package.json
+tsconfig.json
+vercel.json
 ```
 
+Then, you need to create a `vercel.json` file in the root directory of your project.
+
 ```js
-<article className="prose">
-  <p>Hello world</p>
-</article>
+/vercel.json
+
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.ts",
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["src/**"] }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/index.ts"
+    }
+  ]
+}
+
 ```
 
-# This is Heading 1
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, molestias natus praesentium error dicta iure cum nam optio suscipit voluptates magnam eum eaque libero, quos, explicabo fugiat possimus laboriosam consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, molestias natus praesentium error dicta iure cum nam optio suscipit voluptates magnam eum eaque libero, quos, explicabo fugiat possimus laboriosam consequatur.
-
-## This is Heading 2
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, molestias natus praesentium error dicta iure cum nam optio suscipit voluptates magnam eum eaque libero, quos, explicabo fugiat possimus laboriosam consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, molestias natus praesentium error dicta iure cum nam optio suscipit voluptates magnam eum eaque libero, quos, explicabo fugiat possimus laboriosam consequatur.
-
-### This is Heading 3
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, molestias natus praesentium error dicta iure cum nam optio suscipit voluptates magnam eum eaque libero, quos, explicabo fugiat possimus laboriosam consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, molestias natus praesentium error dicta iure cum nam optio suscipit voluptates magnam eum eaque libero, quos, explicabo fugiat possimus laboriosam consequatur.
-
-#### This is Heading 4
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, molestias natus praesentium error dicta iure cum nam optio suscipit voluptates magnam eum eaque libero, quos, explicabo fugiat possimus laboriosam consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, molestias natus praesentium error dicta iure cum nam optio suscipit voluptates magnam eum eaque libero, quos, explicabo fugiat possimus laboriosam consequatur.
+make sure to add environment variables in Vercel dashboard.
