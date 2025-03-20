@@ -1,6 +1,7 @@
 import { defineDocumentType, makeSource } from "@contentlayer/source-files";
 import rehypePrettyCode from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
+import rehypeExternalLinks from "rehype-external-links";
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -26,6 +27,6 @@ export default makeSource({
   documentTypes: [Post],
   mdx: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypePrettyCode],
+    rehypePlugins: [rehypePrettyCode, rehypeExternalLinks],
   },
 });

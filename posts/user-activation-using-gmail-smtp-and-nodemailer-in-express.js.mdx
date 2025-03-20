@@ -1,0 +1,54 @@
+---
+title: User Activation using Gmail SMTP and Nodemailer in Express.js
+date: 2024-12-15
+description: Create API Auth Activation using Gmail SMTP and Nodemailer in Express.js
+tags: [express, nodemailer, smtp]
+tableOfContent: [env, application pass, transporter]
+---
+
+So, I created a simple API that sends an activation email to the user's email address. The user will have to click on the activation link to activate their account.
+
+In this article, I want to share my code on how to setup the Gmail SMTP in Nodemailer for creating user activation API.
+
+## Environment Variables
+
+This is the code for env file
+
+```js
+/.env.local
+
+EMAIL_SMTP_SECURE=true
+EMAIL_SMTP_PASS="****************"
+EMAIL_SMTP_USER="*****@gmail.com"
+EMAIL_SMTP_PORT=587
+EMAIL_SMTP_HOST="smtp.gmail.com"
+EMAIL_SMTP_SERVICE_NAME="Gmail"
+CLIENT_HOST="http://localhost:3001"
+```
+
+The _EMAIL_SMTP_PASS_ you have to put is the password of an **Application Specific Password** that you can generate from your Gmail account. You can learn more about how to use Nodemailer with Gmail SMTP from the Nodemailer blog in this link [nodemailer using gmail](https://www.nodemailer.com/usage/using-gmail/). I recommend you are using 2FA for your Gmail account and generate an **Application Specific Password** for your application. Because using your Gmail password directly in your application is not secure.
+
+If you are not familiar with the **Application Specific Password**, you can follow this link [support.google.com](https://support.google.com/accounts/answer/185833?hl=en) to learn more about it.
+
+## Transporter Object
+
+This is the code for the transporter object
+
+```js
+// create configuration for nodemailer transporter object
+const transporter = nodemailer.createTransport({
+  service: EMAIL_SMTP_SERVICE_NAME,
+  host: EMAIL_SMTP_HOST,
+  port: EMAIL_SMTP_PORT,
+  secure: EMAIL_SMTP_SECURE,
+  auth: {
+    user: EMAIL_SMTP_USER,
+    pass: EMAIL_SMTP_PASS,
+  },
+  requireTLS: true, // Force TLS
+  debug: true, // Enable debugging
+  logger: true, // Log SMTP communication
+});
+```
+
+The _requireTLS_ is set to true to force the TLS connection. The _debug_ and _logger_ are set to true to enable debugging and log SMTP communication. If for some reason you encounter an error, you can check the log to see what is happening.
