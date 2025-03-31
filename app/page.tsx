@@ -24,9 +24,6 @@ export default function Blog() {
         </h1>
       </div>
       <article className="container">
-        <h2 className="mb-4 text-2xl font-semibold dark:text-white">
-          Code Snippet
-        </h2>
         {posts
           .filter((item, i) => i < 3)
           .map((post, i) => {

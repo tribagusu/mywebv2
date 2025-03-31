@@ -12,7 +12,7 @@ export const components: MDXComponents = {
     <Image
       src={props.src || ""}
       alt={props.alt || ""}
-      width={600}
+      width={1000}
       height={600}
       fill={false}
     />
