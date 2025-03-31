@@ -5,8 +5,19 @@ import TableOfContents from "@/app/components/TableOfContents";
 import { notFound } from "next/navigation";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import type { MDXComponents } from "mdx/types";
+import Image from "next/image";
 
-const mdxComponents: MDXComponents = {};
+export const components: MDXComponents = {
+  img: (props) => (
+    <Image
+      src={props.src || ""}
+      alt={props.alt || ""}
+      width={600}
+      height={600}
+      fill={false}
+    />
+  ),
+};
 
 export const generateStaticParams = async () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
@@ -45,7 +56,7 @@ const Post = ({ params }: { params: { slug: string } }) => {
       <TableOfContents post={post} />
 
       <article className="mb-10 prose-custom">
-        <MDXContent components={mdxComponents} />
+        <MDXContent components={components} />
       </article>
     </main>
   );

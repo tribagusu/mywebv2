@@ -16,6 +16,10 @@ const withMDX = createMDX({
   rehypePlugins: [rehypeImgSize],
 });
 
+// function mdxComponents({ source }) {
+//   return <MDXRemote source={source} components={components} />;
+// }
+
 // Merge MDX config with Next.js config
 module.exports = withContentlayer(withMDX(nextConfig));
 
