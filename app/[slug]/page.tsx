@@ -7,7 +7,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
 
-export const components: MDXComponents = {
+const components: MDXComponents = {
   img: (props) => (
     <Image
       src={props.src || ""}
