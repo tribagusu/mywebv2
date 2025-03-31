@@ -12,7 +12,7 @@ export default function Home() {
           Hello world, <strong className="text-accent">triBagus</strong> here!
         </h1>
         <p>
-          a Frontend Developer who passionate with fullstack, web, and{" "}
+          a Fullstack Web Developer who passionate with web app, AI, and{" "}
           <span className="text-accent">coffee</span>.
         </p>
         <br />
@@ -28,7 +28,7 @@ export default function Home() {
       </div>
       {/* <div className="container mt-8">
         <h2 className="heading">Project Highlights</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <Projects />
         </div>
       </div> */}
